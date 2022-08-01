@@ -17,7 +17,7 @@ class TodoListViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
-    // MARK: - TableView Data Source Methods
+    // MARK: - UITableViewDataSource Methods
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoItemCell", for: indexPath)
@@ -30,6 +30,8 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
+    
+    // MARK: - UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected item: \(itemArray[indexPath.row])")
